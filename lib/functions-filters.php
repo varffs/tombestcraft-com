@@ -2,6 +2,14 @@
 
 // Custom filters (like pre_get_posts etc)
 
+// main queries return all posts
+function all_main_query_infinite( $query ) {
+  if (!is_admin() && $query->is_main_query()) {
+    $query->set('posts_per_page', '-1');
+  }
+}
+add_action( 'pre_get_posts', 'all_main_query_infinite' );
+
 // Page Slug Body Class
 function add_slug_body_class( $classes ) {
   global $post;
