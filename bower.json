@@ -15,6 +15,21 @@
     "tests"
   ],
   "dependencies": {
-    "lazysizes": "^2.0.4"
+    "lazysizes": "^2.0.4",
+    "masonry": "^4.2.0",
+    "imagesloaded": "^4.1.2"
+  },
+  "overrides": {
+    "ev-emitter": {
+      "dependencies": {
+        "jquery-bridget": "~2.0.0"
+      }
+    },
+    "outlayer": {
+      "main": [
+        "item.js",
+        "outlayer.js"
+      ]
+    }
   }
 }
