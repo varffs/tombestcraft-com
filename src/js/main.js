@@ -1,5 +1,5 @@
 /* jshint browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
-/* global $, jQuery, document, Site, Modernizr */
+/* global $, document, Site */
 
 Site = {
   mobileThreshold: 601,
@@ -13,6 +13,8 @@ Site = {
     $(document).ready(function () {
 
     });
+
+    Site.Masonry.init();
 
   },
 
@@ -29,6 +31,39 @@ Site = {
       $(this).html(string);
     });
   },
+};
+
+Site.Masonry = {
+  $container: $('#masonry-container'),
+  instance: undefined,
+
+  init: function() {
+    var _this = this;
+
+    if (_this.$container.length) {
+      _this.createInstance();
+    }
+  },
+
+  createInstance: function() {
+    var _this = this;
+
+    _this.instance = new Masonry(_this.$container[0], {
+      itemSelector: '.grid-item',
+      transitionDuration: 0,
+    });
+
+    _this.$container.imagesLoaded(function() {
+      _this.instance.layout();
+    });
+
+    _this.$container.find('img').each(function(index, item) {
+      $(item).on('load', function() {
+        _this.instance.layout();
+      });
+    });
+
+  }
 };
 
 Site.init();
