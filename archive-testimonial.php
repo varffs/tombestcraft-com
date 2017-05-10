@@ -15,8 +15,8 @@ if( have_posts() ) {
         <div class="card background-yellow">
           <?php the_post_thumbnail(); ?>
           <div class="gallery-caption">
-            <h4 class="margin-bottom-tiny"><?php the_title(); ?></h4>
-            <div class="font-smaller">
+            <h4 class="margin-bottom-tiny font-smaller"><?php the_title(); ?></h4>
+            <div>
               <?php echo $post->post_content; ?>
             </div>
           </div>
