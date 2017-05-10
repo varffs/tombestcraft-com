@@ -34,7 +34,7 @@
       </div>
       <div class="grid-item item-s-12 item-m-7 text-align-right">
         <ul id="header-menu" class="font-size-large card">
-          <li><a href="<?php echo home_url('gallery'); ?>">Gallery</a></li>
+          <li><a href="<?php echo home_url(); ?>">Gallery</a></li>
           <li><a href="<?php echo home_url('about-me'); ?>">About Me</a></li>
           <li><a href="<?php echo home_url('order'); ?>">Order</a></li>
           <li><a href="<?php echo home_url('testimonials'); ?>">Testimonials</a></li>
