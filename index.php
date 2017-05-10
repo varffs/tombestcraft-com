@@ -16,7 +16,9 @@ if( have_posts() ) {
           <?php the_post_thumbnail(); ?>
           <div class="gallery-caption">
             <h4><?php the_title(); ?></h4>
-            <?php the_content(); ?>
+            <div class="font-smaller">
+              <?php echo $post->post_content; ?>
+            </div>
           </div>
         </div>
       </article>
