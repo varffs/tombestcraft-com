@@ -1,60 +1,54 @@
 <?php
-// Menu icons for Custom Post Types
-// https://developer.wordpress.org/resource/dashicons/
-function add_menu_icons_styles(){
-?>
- 
-<style>
-#menu-posts-project .dashicons-admin-post:before {
-    content: '\f319';
+// Register Custom Post Type
+function testimonials_post_type() {
+
+	$labels = array(
+		'name'                  => 'Testimonials',
+		'singular_name'         => 'Testimonial',
+		'menu_name'             => 'Testimonials',
+		'name_admin_bar'        => 'Testimonial',
+		'archives'              => 'Item Archives',
+		'attributes'            => 'Item Attributes',
+		'parent_item_colon'     => 'Parent Item:',
+		'all_items'             => 'All Items',
+		'add_new_item'          => 'Add New Item',
+		'add_new'               => 'Add New',
+		'new_item'              => 'New Item',
+		'edit_item'             => 'Edit Item',
+		'update_item'           => 'Update Item',
+		'view_item'             => 'View Item',
+		'view_items'            => 'View Items',
+		'search_items'          => 'Search Item',
+		'not_found'             => 'Not found',
+		'not_found_in_trash'    => 'Not found in Trash',
+		'featured_image'        => 'Featured Image',
+		'set_featured_image'    => 'Set featured image',
+		'remove_featured_image' => 'Remove featured image',
+		'use_featured_image'    => 'Use as featured image',
+		'insert_into_item'      => 'Insert into item',
+		'uploaded_to_this_item' => 'Uploaded to this item',
+		'items_list'            => 'Items list',
+		'items_list_navigation' => 'Items list navigation',
+		'filter_items_list'     => 'Filter items list',
+	);
+	$args = array(
+		'label'                 => 'Testimonial',
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => 'testimonials',
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'testimonial', $args );
+
 }
-</style>
- 
-<?php
-}
-add_action( 'admin_head', 'add_menu_icons_styles' );
-
-
-//Register Custom Post Types
-add_action( 'init', 'register_cpt_project' );
-
-function register_cpt_project() {
-
-    $labels = array( 
-        'name' => _x( 'Projects', 'project' ),
-        'singular_name' => _x( 'Project', 'project' ),
-        'add_new' => _x( 'Add New', 'project' ),
-        'add_new_item' => _x( 'Add New Project', 'project' ),
-        'edit_item' => _x( 'Edit Project', 'project' ),
-        'new_item' => _x( 'New Project', 'project' ),
-        'view_item' => _x( 'View Project', 'project' ),
-        'search_items' => _x( 'Search Projects', 'project' ),
-        'not_found' => _x( 'No projects found', 'project' ),
-        'not_found_in_trash' => _x( 'No projects found in Trash', 'project' ),
-        'parent_item_colon' => _x( 'Parent Project:', 'project' ),
-        'menu_name' => _x( 'Projects', 'project' ),
-    );
-
-    $args = array( 
-        'labels' => $labels,
-        'hierarchical' => false,
-        
-        'supports' => array( 'title', 'editor', 'thumbnail' ),
-        
-        'public' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'menu_position' => 5,
-        
-        'show_in_nav_menus' => true,
-        'publicly_queryable' => true,
-        'exclude_from_search' => false,
-        'has_archive' => true,
-        'query_var' => true,
-        'can_export' => true,
-        'rewrite' => true,
-        'capability_type' => 'post'
-    );
-
-    register_post_type( 'project', $args );
-}
+add_action( 'init', 'testimonials_post_type', 0 );
