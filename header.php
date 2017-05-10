@@ -27,6 +27,18 @@
 
 <section id="main-container">
 
-  <header id="header">
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+  <header id="header" class="header-container container font-bold font-uppercase margin-top-small margin-bottom-basic">
+    <div class="grid-row background-yellow">
+      <div class="grid-item item-s-12 item-m-5">
+        <h1 class="font-size-extra card"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+      </div>
+      <div class="grid-item item-s-12 item-m-7 text-align-right">
+        <ul id="header-menu" class="font-size-large card">
+          <li><a href="<?php echo home_url(); ?>">Gallery</a></li>
+          <li><a href="<?php echo home_url('about-me'); ?>">About Me</a></li>
+          <li><a href="<?php echo home_url('order'); ?>">Order</a></li>
+          <li><a href="<?php echo home_url('testimonials'); ?>">Testimonials</a></li>
+        </ul>
+      </div>
+    </div>
   </header>
