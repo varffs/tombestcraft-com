@@ -14,7 +14,7 @@ if( have_posts() ) {
       <article class="grid-row" id="post-<?php the_ID(); ?>">
         <div class="grid-item item-s-12 item-m-6">
           <div class="card background-yellow">
-            <h2 class="font-size-extra font-bold margin-bottom-small"><?php the_title(); ?></h2>
+            <h2 class="font-size-mid margin-bottom-small"><?php the_title(); ?></h2>
             <?php the_content(); ?>
           </div>
         </div>
