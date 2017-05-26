@@ -26,9 +26,9 @@ if( have_posts() ) {
   }
 } else {
 ?>
-      <div class="grid-row">
-        <article class="u-alert grid-item item-s-12"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>
-      </div>
+      <article class="grid-item item-s-12 item-m-6 item-l-4 margin-bottom-small text-align-center">
+        <?php _e('Sorry nothing found'); ?>
+      </article>
 <?php
 } ?>
     </div>
