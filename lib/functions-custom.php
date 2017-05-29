@@ -10,6 +10,8 @@ function send_enquiry() {
 
   $to = IGV_get_option('_igv_site_options', '_igv_contact_email');
 
+  header('Content-Type: application/json');
+
   if ($to) {
     $product = sanitize_text_field($_POST['data']['product']);
     $from = sanitize_email($_POST['data']['from']);
@@ -24,11 +26,14 @@ function send_enquiry() {
     $email = wp_mail($to, $title, $message, $headers);
     remove_filter('wp_mail_content_type', 'set_html_content_type');
 
-    header('Content-Type: application/json');
-    echo json_encode($email);
+    if ($email) {
+      echo json_encode(array('type' => 'success'));
+    } else {
+      echo json_encode(array('type' => 'error', 'error' => array('type' => 2, 'message' => 'Message not sent. Email sending failed. Please inform the webmaster')));
+    }
+
   } else {
-    header('Content-Type: application/json');
-    echo json_encode(array('type' => 'error', 'error' => array('type' => 1, 'message' => 'Contact form not configured. Please inform the webmaster')));
+    echo json_encode(array('type' => 'error', 'error' => array('type' => 1, 'message' => 'Contact form not configured. Message not sent. Please inform the webmaster')));
   }
 
   wp_die();
