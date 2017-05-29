@@ -70,18 +70,21 @@ Site.Enquery = {
     if (data.from === '' || data.copy === '') {
       _this.warnInvalid(form);
     } else {
-      _this.makeRequest(data);
+      _this.unwarnInvalid(form);
+      _this.makeRequest(data, form);
 
     }
   },
 
   warnInvalid: function(form) {
-    var _this = this;
-
     $(form).addClass('invalid');
   },
 
-  makeRequest: function(data) {
+  unwarnInvalid: function(form) {
+    $(form).removeClass('invalid');
+  },
+
+  makeRequest: function(data, form) {
     var _this = this;
 
     console.log(data);
@@ -97,13 +100,13 @@ Site.Enquery = {
       type: 'post',
       data: requestData,
       success: function(response, status) {
-        _this.handleResponse(response, status);
+        _this.handleResponse(response, status, form);
       }
     });
 
   },
 
-  handleResponse: function(response, status) {
+  handleResponse: function(response, status, form) {
 
     if (response.type === 'error') {
 
