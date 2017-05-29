@@ -11,4 +11,7 @@
   <label for="copy">Message:</label>
   <textarea name="copy" id="copy"></textarea>
   <input type="submit" value="Send">
+  <div class="invalid-message">
+    Please enter a reply address and a message.
+  </div>
 </form>

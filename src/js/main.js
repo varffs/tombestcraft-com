@@ -57,19 +57,28 @@ Site.Enquery = {
           return obj;
         }, {});
 
-        _this.submitForm(data);
+        _this.submitForm(this, data);
 
       }
     })
   },
 
-  submitForm: function(data) {
+  submitForm: function(form, data) {
     var _this = this;
 
     // validate and notify
+    if (data.from === '' || data.copy === '') {
+      _this.warnInvalid(form);
+    } else {
+      _this.makeRequest(data);
 
-    // make ajax request
-    _this.makeRequest(data);
+    }
+  },
+
+  warnInvalid: function(form) {
+    var _this = this;
+
+    $(form).addClass('invalid');
   },
 
   makeRequest: function(data) {
