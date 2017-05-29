@@ -86,9 +86,6 @@ Site.Enquery = {
 
   makeRequest: function(data, form) {
     var _this = this;
-
-    console.log(data);
-
     var requestData = {
       'action': 'send_enquiry',
       'nonce': data.nonce,
@@ -103,7 +100,6 @@ Site.Enquery = {
         _this.handleResponse(response, status, form);
       }
     });
-
   },
 
   handleResponse: function(response, status, form) {
@@ -111,10 +107,9 @@ Site.Enquery = {
 
     if (response.type === 'error') {
       _this.handleError(response.error, form);
-    } else {
-
+    } else if (response.type === 'success') {
+      $(form).addClass('thanks');
     }
-    console.log('response', response);
 
   },
 

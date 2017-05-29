@@ -15,4 +15,5 @@
     Please enter a reply address and a message.
   </div>
   <div class="error-message"></div>
+  <div class="thanks-message">Thank you for your enquiry. I will respond as soon as possible.</div>
 </form>
