@@ -72,7 +72,7 @@ Site.Enquery = {
     } else {
       _this.unwarnInvalid(form);
       _this.makeRequest(data, form);
-
+      $(form).find('input[type=submit]').attr('disabled', 'disabled');
     }
   },
 
@@ -107,15 +107,26 @@ Site.Enquery = {
   },
 
   handleResponse: function(response, status, form) {
+    var _this = this;
 
     if (response.type === 'error') {
-
+      _this.handleError(response.error, form);
     } else {
 
     }
     console.log('response', response);
 
   },
+
+  handleError: function(error, form) {
+    var _this = this;
+    var $form = $(form);
+
+    console.log('Error!', error);
+
+    $form.addClass('error');
+    $form.find('.error-message').text(error.message);
+  }
 };
 
 Site.Masonry = {

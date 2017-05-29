@@ -14,4 +14,5 @@
   <div class="invalid-message">
     Please enter a reply address and a message.
   </div>
+  <div class="error-message"></div>
 </form>
