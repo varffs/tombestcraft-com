@@ -11,6 +11,21 @@ $metabox = array(
   'show_on'    => array( 'key' => 'options-page', 'value' => array( $page_key ), ), //value must be same as id
   'show_names' => true,
   'fields'     => array(
+    // EMAIL
+
+    array(
+      'name' => __( 'Contact email', 'cmb2' ),
+      'desc' => __( '', 'cmb2' ),
+      'id'   => $prefix . 'contact_title',
+      'type' => 'title',
+    ),
+    array(
+      'name' => __( 'Set your contact email', 'IGV' ),
+      'desc' => __( 'this is where enquiries on the website will be sent', 'IGV' ),
+      'id'   => $prefix . 'contact_email',
+      'type' => 'text_email',
+    ),
+
     array(
       'name' => __( 'Social Media', 'cmb2' ),
       'desc' => __( 'urls and accounts for different social media platforms. For use in menus and metadata', 'cmb2' ),
@@ -78,28 +93,6 @@ $metabox = array(
       'type' => 'text',
     ),
 
-    // BOILER
-
-    array(
-      'name' => __( 'Title for options section', 'cmb2' ),
-      'desc' => __( '', 'cmb2' ),
-      'id'   => $prefix . 'general_title',
-      'type' => 'title',
-    ),
-    array(
-      'name' => __( 'Test Text', 'IGV' ),
-      'desc' => __( 'field description (optional)', 'IGV' ),
-      'id'   => $prefix . 'test_text',
-      'type' => 'text',
-      'default' => 'Default Text',
-    ),
-    array(
-      'name'    => __( 'Test Color Picker', 'IGV' ),
-      'desc'    => __( 'field description (optional)', 'IGV' ),
-      'id'      => $prefix . 'test_colorpicker',
-      'type'    => 'colorpicker',
-      'default' => '#bada55',
-    )
   )
 );
 
