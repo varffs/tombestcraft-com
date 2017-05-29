@@ -15,6 +15,7 @@ Site = {
     });
 
     Site.Masonry.init();
+    Site.Enquery.init();
 
   },
 
@@ -30,6 +31,78 @@ Site = {
       string = string.replace(/ ([^ ]*)$/,'&nbsp;$1');
       $(this).html(string);
     });
+  },
+};
+
+Site.Enquery = {
+  $forms: $('.contact-form'),
+  init: function() {
+    var _this = this;
+
+    if (_this.$forms.length) {
+      _this.bind();
+    }
+
+  },
+
+  bind: function() {
+    var _this = this;
+
+    _this.$forms.on({
+      'submit': function(e) {
+        e.preventDefault();
+
+        var data = $(this).serializeArray().reduce(function(obj, item) {
+          obj[item.name] = item.value;
+          return obj;
+        }, {});
+
+        _this.submitForm(data);
+
+      }
+    })
+  },
+
+  submitForm: function(data) {
+    var _this = this;
+
+    // validate and notify
+
+    // make ajax request
+    _this.makeRequest(data);
+  },
+
+  makeRequest: function(data) {
+    var _this = this;
+
+    console.log(data);
+
+    var requestData = {
+      'action': 'send_enquiry',
+      'nonce': data.nonce,
+      'data': data
+    };
+
+    $.ajax({
+      url: WP.ajaxUrl,
+      type: 'post',
+      data: requestData,
+      success: function(response, status) {
+        _this.handleResponse(response, status);
+      }
+    });
+
+  },
+
+  handleResponse: function(response, status) {
+
+    if (response.type === 'error') {
+
+    } else {
+
+    }
+    console.log('response', response);
+
   },
 };
 

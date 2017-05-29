@@ -16,6 +16,7 @@ if( have_posts() ) {
           <div class="card background-yellow">
             <h2 class="font-size-mid margin-bottom-small"><?php the_title(); ?></h2>
             <?php the_content(); ?>
+            <?php get_template_part('partials/contact-form'); ?>
           </div>
         </div>
         <div class="grid-item item-s-12 item-m-6">

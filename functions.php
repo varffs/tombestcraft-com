@@ -18,6 +18,7 @@ function scripts_and_styles_method() {
   $javascriptVars = array(
     'siteUrl' => home_url(),
     'themeUrl' => get_template_directory_uri(),
+    'ajaxUrl' => admin_url('admin-ajax.php'),
     'isAdmin' => $is_admin,
   );
 
