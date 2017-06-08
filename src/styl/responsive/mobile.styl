@@ -28,3 +28,35 @@ p
         border-bottom-color: black
         border-bottom-style: solid
         border-bottom-width: 2px
+
+// CONTACT FORM
+
+.contact-form
+  margin-top: $margin-basic
+  &.invalid
+    .invalid-message
+      display: block
+  &.error
+    .error-message
+      display: block
+  &.thanks
+    .thanks-message
+      display: block
+
+label, input, textarea
+  display: block
+  width: 100%
+  padding: $margin-tiny
+  margin-bottom: $margin-tiny
+
+input[type=submit]
+  width: auto
+  margin: $margin-small $margin-tiny
+
+textarea
+  height: 11em
+
+.invalid-message, .error-message, .thanks-message
+  display: none
+  background: white
+  padding: $margin-tiny
