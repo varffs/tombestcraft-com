@@ -15,7 +15,7 @@ Site = {
     });
 
     Site.Masonry.init();
-    Site.Enquery.init();
+    Site.Enquiry.init();
 
   },
 
@@ -34,7 +34,7 @@ Site = {
   },
 };
 
-Site.Enquery = {
+Site.Enquiry = {
   $forms: $('.contact-form'),
   init: function() {
     var _this = this;
