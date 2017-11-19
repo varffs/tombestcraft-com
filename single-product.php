@@ -21,7 +21,7 @@ if( have_posts() ) {
         </div>
         <div class="grid-item item-s-12 item-m-6">
           <div class="card background-yellow">
-            <?php the_post_thumbnail(); ?>
+            <?php the_post_thumbnail('l-6'); ?>
           </div>
         </div>
       </article>

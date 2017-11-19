@@ -15,7 +15,7 @@ if( have_posts() ) {
         <a href="<?php the_permalink(); ?>">
           <div class="card background-yellow">
             <h2 class="font-size-extra font-bold margin-bottom-small"><?php the_title(); ?></h2>
-            <?php the_post_thumbnail(); ?>
+            <?php the_post_thumbnail('l-6'); ?>
             <h3 class="font-size-mid margin-top-tiny">Find out more</h3>
           </div>
         </a>
