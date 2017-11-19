@@ -13,7 +13,7 @@ if( have_posts() ) {
 ?>
       <article class="grid-item item-s-12 item-m-6 item-l-4 margin-bottom-small text-align-center" id="post-<?php the_ID(); ?>">
         <div class="card background-yellow">
-          <?php the_post_thumbnail(); ?>
+          <?php the_post_thumbnail('l-4'); ?>
           <div class="gallery-caption">
             <h4 class="margin-bottom-tiny font-smaller"><?php the_title(); ?></h4>
             <div>
