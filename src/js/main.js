@@ -1,7 +1,9 @@
-/* jshint browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
-/* global $, document, Site */
+import '../styl/site.styl'; // import styl for webpack
 
-Site = {
+/* jshint browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
+/* global $, WP, Masonry */
+
+const Site = {
   mobileThreshold: 601,
   init: function() {
     var _this = this;
@@ -20,7 +22,6 @@ Site = {
   },
 
   onResize: function() {
-    var _this = this;
 
   },
 
@@ -60,7 +61,7 @@ Site.Enquiry = {
         _this.submitForm(this, data);
 
       }
-    })
+    });
   },
 
   submitForm: function(form, data) {
@@ -114,7 +115,6 @@ Site.Enquiry = {
   },
 
   handleError: function(error, form) {
-    var _this = this;
     var $form = $(form);
 
     console.log('Error!', error);
