@@ -42,11 +42,14 @@ add_action('wp_enqueue_scripts', 'scripts_and_styles_method');
 get_template_part( 'lib/thumbnail-sizes' );
 
 // Register Nav Menus
-/*
-register_nav_menus( array(
-  'menu_location' => 'Location Name',
-) );
-*/
+function nm_register_menus() {
+  register_nav_menus(
+    array(
+      'footer' => __( 'Footer Menu' ),
+     )
+   );
+ }
+add_action( 'init', 'nm_register_menus' );
 
 // Add third party PHP libs
 
