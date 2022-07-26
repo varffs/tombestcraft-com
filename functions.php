@@ -38,8 +38,12 @@ function scripts_and_styles_method() {
 add_action('wp_enqueue_scripts', 'scripts_and_styles_method');
 
 // Declare thumbnail sizes
-
 get_template_part( 'lib/thumbnail-sizes' );
+
+// oEmbed
+if ( ! isset( $content_width ) ) {
+	$content_width = 1548;
+}
 
 // Register Nav Menus
 function nm_register_menus() {
@@ -52,7 +56,6 @@ function nm_register_menus() {
 add_action( 'init', 'nm_register_menus' );
 
 // Add third party PHP libs
-
 function cmb_initialize_cmb_meta_boxes() {
   if (!class_exists( 'cmb2_bootstrap_202' ) ) {
     require_once 'vendor/webdevstudios/cmb2/init.php';

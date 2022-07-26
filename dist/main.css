@@ -1173,6 +1173,31 @@ img {
 .desktop-only {
   display: none !important;
 }
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+#header-menu {
+  margin-bottom: 0;
+}
+.wp-block-embed.is-type-video .wp-block-embed__wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+.wp-block-embed.is-type-video .wp-block-embed__wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 #menu-footer-menu li {
   display: inline-block;
   padding: 0 1rem;
