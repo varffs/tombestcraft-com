@@ -11,4 +11,4 @@
 - [ ] Change front page to products
 - [ ] Posts (gallery) category filter
 - [x] Full width page template for video page 
-- [ ] Update Masonry and implimentation
+- [x] Update Masonry and implementation

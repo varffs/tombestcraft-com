@@ -1,7 +1,16 @@
 import '../styl/site.styl'; // import styl for webpack
 
+import 'lazysizes';
+
+import $ from 'jquery';
+import jQueryBridget from 'jquery-bridget';
+import imagesLoaded from 'imagesloaded';
+import Masonry from 'masonry-layout';
+
+jQueryBridget( 'imagesLoaded', imagesLoaded, $ );
+
 /* jshint browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
-/* global $, WP, Masonry */
+/* global WP */
 
 const Site = {
   mobileThreshold: 601,
@@ -142,6 +151,7 @@ Site.Masonry = {
     _this.instance = new Masonry(_this.$container[0], {
       itemSelector: '.grid-item',
       transitionDuration: 0,
+      percentPosition: true,
     });
 
     _this.$container.imagesLoaded(function() {

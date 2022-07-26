@@ -4,14 +4,8 @@
 
 function scripts_and_styles_method() {
   $templateuri = get_template_directory_uri();
-
-  if (WP_DEBUG) {
-    $javascriptLibrary = $templateuri . '/dist/js/library.js';
-    $javascriptMain = $templateuri . '/dist/main.js';
-  } else {
-    $javascriptLibrary = $templateuri . '/dist/js/library.min.js';
-    $javascriptMain = $templateuri . '/dist/main.js';
-  }
+  
+  $javascriptMain = $templateuri . '/dist/main.js';
 
   $is_admin = current_user_can('administrator') ? 1 : 0;
 
@@ -21,8 +15,6 @@ function scripts_and_styles_method() {
     'ajaxUrl' => admin_url('admin-ajax.php'),
     'isAdmin' => $is_admin,
   );
-
-  wp_enqueue_script('javascript-library', $javascriptLibrary, '', '', true);
 
   wp_register_script('javascript-main', $javascriptMain);
   wp_localize_script('javascript-main', 'WP', $javascriptVars);
