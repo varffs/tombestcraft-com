@@ -1,12 +1,12 @@
 # Todo
 
-- [ ] Update theme from live site changes!!!
+- [x] Update theme from live site changes!!!
 - [x] Update tooling
 - [ ] Add video page to menu (when ready)
-- [ ] Nav menu footer
+- [x] Nav menu footer
 - [ ] Remove indent paragraph style
 - [ ] Product page 3 col (maybe)
-- [ ] Proper list style
+- [x] Proper list style
 
 - [ ] Change front page to products
 - [ ] Posts (gallery) category filter

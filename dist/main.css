@@ -1152,6 +1152,13 @@ a.link-underline,
 p a {
   text-decoration: underline;
 }
+ul {
+  margin-bottom: 1rem;
+}
+ul li {
+  list-style: circle;
+  list-style-position: inside;
+}
 html {
   background-color: #fff;
   color: #000;
@@ -1428,12 +1435,6 @@ html,
 }
 .card {
   padding: 14px;
-}
-p {
-  text-indent: 49px;
-}
-p:first-child {
-  text-indent: 0;
 }
 #header-menu li {
   display: inline-block;
@@ -1735,9 +1736,6 @@ textarea {
   .card {
     padding: 21px;
   }
-  p {
-    text-indent: 42px;
-  }
 }
 @media screen and (min-width: 1024px) {
   .header-container.container {
@@ -1829,9 +1827,6 @@ textarea {
   }
   .card {
     padding: 24px;
-  }
-  p {
-    text-indent: 48px;
   }
   .header-container.container {
     width: 1200px;
